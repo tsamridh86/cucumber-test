@@ -11,15 +11,25 @@ public class Stepdefs {
     private String today;
     private String answer;
 
+    @Given("I am logged in")
+    public void loggedIn(){
+        System.out.println("background task");
+    }
+
+
+
+
     @Given("today is {string}")
     public void today_is_day(String day) {
+        System.out.println("step1");
         today = day;
     }
     
     @When("I ask whether it's Friday yet")
     public void i_ask_whether_it_s_Friday_yet() {
-        if("Friday" == today){
-            answer = "Yes!";
+        System.out.println("step2");
+        if("Friday".equals(today)){
+            answer = "Yes";
         }else{
             answer = "Nope";
         }
@@ -27,6 +37,7 @@ public class Stepdefs {
     
     @Then("I should be told {string}")
     public void i_should_be_told(String string) {
+        System.out.println("step3");
         assertEquals(string, answer);
     }
     

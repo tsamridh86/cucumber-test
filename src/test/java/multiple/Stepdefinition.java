@@ -8,11 +8,10 @@ import static org.junit.Assert.*;
 
 public class Stepdefinition {
 
-
-
     private String currentDay;
-    private String answer;
+ private String answer;
 
+    
     @Given("today is {string}")
 public void today_is(String day) { 
     currentDay = day;
